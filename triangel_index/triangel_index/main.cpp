@@ -22,17 +22,19 @@ glm::mat4 Projection;
 std::vector<rg::shape_r> shapes;
 std::vector<rg::material_r> materials;
 
+ /**
+ *  加载obj模型
+ */
 void loadModel()
 {
-    std::string filename =     "/Users/wistoneqqx/Documents/opengl/opengl-study-records/load-obj-gl14/triangel_index/triangel_index/data/porsche.obj";
-    std::string mtl_basepath = "/Users/wistoneqqx/Documents/opengl/opengl-study-records/load-obj-gl14/triangel_index/triangel_index/data/";
+    std::string objfile = "/Users/wistoneqqx/Documents/github/sbxOpenGL/drawObjModel/triangel_index/triangel_index/data/porsche.obj";
+    std::string mtlpath = "/Users/wistoneqqx/Documents/github/sbxOpenGL/drawObjModel/triangel_index/triangel_index/data/";
 
     rg::LoadObj(
         shapes,
         materials,
-        filename.c_str(),
-        mtl_basepath.c_str()
-        );
+        objfile.c_str(),
+        mtlpath.c_str());
 }
 
 void initModel(GLuint m_vao[],size_t shapersNum)
@@ -96,8 +98,8 @@ void drawModel(GLuint m_vao[],size_t size)
 void initShader(void)
 {
     shaderLoader.load(
-            "/Users/wistoneqqx/Documents/opengl/opengl-study-records/load-obj-gl14/triangel_index/triangel_index/simpleShader.vert",
-            "/Users/wistoneqqx/Documents/opengl/opengl-study-records/load-obj-gl14/triangel_index/triangel_index/simpleShader.frag"
+            "/Users/wistoneqqx/Documents/github/sbxOpenGL/drawObjModel/triangel_index/triangel_index/simpleShader.vert",
+            "/Users/wistoneqqx/Documents/github/sbxOpenGL/drawObjModel/triangel_index/triangel_index/simpleShader.frag"
             );
     shaderLoader.bind();
     

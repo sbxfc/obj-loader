@@ -462,16 +462,14 @@ namespace rg {
     }
 
     
-    std::string LoadObj(
-                        std::vector<shape_r>& shapes,
+    std::string LoadObj(std::vector<shape_r>& shapes,
                         std::vector<material_r>& materials,   // [output]
                         const char* filename,
-                        const char* mtl_basepath)
+                        const char* mtlbasepath)
     {
         shapes.clear();
         
         std::stringstream err;
-        
         std::ifstream ifs(filename);
         if(!ifs){
             err << "Cannot open file [" << filename << "]" << std::endl;
@@ -479,15 +477,15 @@ namespace rg {
         }
         
         std::string basePath;
-        if (mtl_basepath) {
-            basePath = mtl_basepath;
+        if (mtlbasepath) {
+            basePath = mtlbasepath;
         }
         MaterialFileReader matFileReader( basePath );
         
         return LoadObj(shapes, materials, ifs, matFileReader);
     }
     
-    std::string  LoadObj(std::vector<rg::shape_r>& shapes,
+    std::string LoadObj(std::vector<rg::shape_r>& shapes,
                          std::vector<material_r>& materials,
                          std::istream& inStream,
                          MaterialReader& readMatFn)
