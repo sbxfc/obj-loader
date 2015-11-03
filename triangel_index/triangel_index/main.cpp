@@ -27,8 +27,8 @@ std::vector<rg::material_r> materials;
  */
 void loadModel()
 {
-    std::string objfile = "/Users/wistoneqqx/Documents/github/sbxOpenGL/drawObjModel/triangel_index/triangel_index/data/porsche.obj";
-    std::string mtlpath = "/Users/wistoneqqx/Documents/github/sbxOpenGL/drawObjModel/triangel_index/triangel_index/data/";
+    std::string objfile = "/Users/wistoneqqx/Documents/github/sbxfc/OpenGLDrawOBJ/triangel_index/triangel_index/data/porsche.obj";
+    std::string mtlpath = "/Users/wistoneqqx/Documents/github/sbxfc/OpenGLDrawOBJ/triangel_index/triangel_index/data/";
 
     rg::LoadObj(
         shapes,
@@ -98,8 +98,8 @@ void drawModel(GLuint m_vao[],size_t size)
 void initShader(void)
 {
     shaderLoader.load(
-            "/Users/wistoneqqx/Documents/github/sbxOpenGL/drawObjModel/triangel_index/triangel_index/simpleShader.vert",
-            "/Users/wistoneqqx/Documents/github/sbxOpenGL/drawObjModel/triangel_index/triangel_index/simpleShader.frag"
+            "/Users/wistoneqqx/Documents/github/sbxfc/OpenGLDrawOBJ/triangel_index/triangel_index/simpleShader.vert",
+            "/Users/wistoneqqx/Documents/github/sbxfc/OpenGLDrawOBJ/triangel_index/triangel_index/simpleShader.frag"
             );
     shaderLoader.bind();
     
